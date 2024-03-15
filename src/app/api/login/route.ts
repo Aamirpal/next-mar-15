@@ -22,7 +22,7 @@ export async function POST(request: Request, response: Response) {
     });
 
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      throw new Error(`HTTP error!  status: ${response.status}`);
     }
 
     const data = await response.json();
