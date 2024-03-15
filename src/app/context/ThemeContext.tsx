@@ -1,7 +1,10 @@
 "use client";
 import { createContext, useState, useEffect } from "react";
 
-export const ThemeContext = createContext();
+export const ThemeContext = createContext({
+  changeTheme: (theme: string) => {},
+  theme: "light",
+});
 
 import React from "react";
 
