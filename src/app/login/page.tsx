@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import Link from "next/link";
 
 const LoginPage: React.FC = () => {
+  const [isLoading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -17,6 +18,7 @@ const LoginPage: React.FC = () => {
       password: password,
     };
     try {
+      setLoading(true);
       const response = await fetch("/api/login", {
         method: "POST",
         headers: {
@@ -24,6 +26,7 @@ const LoginPage: React.FC = () => {
         },
         body: JSON.stringify(formData),
       });
+      setLoading(false);
       if (!response.ok) {
         setError("Invalid credentials!!!");
         console.log(response);
@@ -99,11 +102,16 @@ const LoginPage: React.FC = () => {
               </label>
             </div>
             <div className="form-control mt-6">
-              <Link href="/dashboard">
-                <button onClick={handleLogin} className="btn btn-primary">
-                  Login
+              {isLoading ? (
+                <button className="btn">
+                  <span className="loading loading-spinner"></span>
+                  loading
                 </button>
-              </Link>
+              ) : (
+                <button onClick={handleLogin} className="btn btn-primary">
+                  <Link href="/dashboard">Login</Link>
+                </button>
+              )}
             </div>
           </form>
         </div>
