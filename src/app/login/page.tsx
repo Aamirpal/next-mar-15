@@ -19,6 +19,7 @@ const LoginPage: React.FC = () => {
     };
     try {
       setLoading(true);
+      setError(null);
       const response = await fetch("/api/login", {
         method: "POST",
         headers: {
