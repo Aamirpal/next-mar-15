@@ -1,7 +1,4 @@
 "use client";
-import Footer from "./components/Footer";
-import NavBar from "./components/TopNavBar";
-import ClientTheme from "./context/ClientTheme";
 import { ThemeContext, ThemeProvider } from "./context/ThemeContext";
 
 import "./globals.css";
@@ -18,7 +15,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
   const { theme } = useContext(ThemeContext);
   return (
     <html lang="en">
-      <body data-theme={theme}>{children}</body>
+      <body data-theme="light" className="">
+        {children}
+      </body>
     </html>
   );
 }
