@@ -56,22 +56,22 @@ const LoginPage: React.FC = () => {
                 setErrors(newErrors);
             } else {
                 // @ts-ignore
-                setErrors({"login_api": "Invalid credentials!!!fsfd"});
+                setErrors({"login_api": "Invalid credentials. Please try again."});
                 console.log("Unexpected error:", error);
             }
         }
     };
 
     return (
-        <div className="hero min-h-screen bg-base-200">
-            <div className="hero-content flex-col lg:flex-row-reverse">
-                <div className="text-center lg:text-left">
-                    <h1 className="text-5xl font-bold">Login now!</h1>
-                    <p className="py-6">
-                        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-                        excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-                        a id nisi.
-                    </p>
+        <div className="hero min-h-screen bg-gray-300">
+            <div className="hero-content flex-col w-full">
+                <div className=" lg:text-center">
+                    <h1 className="text-3xl font-bold">Login</h1>
+                    {/*<p className="py-6">*/}
+                    {/*    Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda*/}
+                    {/*    excepturi exercitationem quasi. In deleniti eaque aut repudiandae et*/}
+                    {/*    a id nisi.*/}
+                    {/*</p>*/}
                 </div>
                 <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <form className="card-body">
