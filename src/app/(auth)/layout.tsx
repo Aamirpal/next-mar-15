@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import React from "react";
-import LeftNavBar from "@/components/LeftNavBar";
+import LeftNavBar from "@/components/Navigation/LeftNavBar";
 
 interface AuthLayoutProps {
     children: React.ReactNode;

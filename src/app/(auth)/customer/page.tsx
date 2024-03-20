@@ -2,7 +2,9 @@
 import {Post} from "./model";
 import {fetchPosts} from "./service";
 import React, {useRef, useState, useEffect, Suspense} from 'react';
-import SortingIcon from "@/components/TableSortingIcon";
+import SortingIcon from "@/components/Table/TableSortingIcon";
+import Pagination from "@/components/Table/Pagination";
+import {FaRegEye} from "react-icons/fa";
 
 
 interface PostsPageProps {
@@ -47,108 +49,111 @@ export default function PostsPage() {
                 </div>
             </div>
             :
-            <table className="table bg-white table-xs">
-                <thead>
-                <tr>
-                    <th></th>
-                    <th onClick={() => handleSorting("name")}>
-                        Name
-                        <SortingIcon direction={sorting.column === 'name' ? sorting.direction : null}/>
-                    </th>
-                    <th onClick={() => handleSorting("city")}>
-                        City
-                        <SortingIcon direction={sorting.column === 'city' ? sorting.direction : null}/>
-                    </th>
-                    <th>
-                        Contact
-                        <SortingIcon direction="asc"/>
-                    </th>
-                    <th>
-                        Admin User
-                        <SortingIcon direction={null}/>
-                    </th>
-                    <th>Subscription Amount<SortingIcon direction={null}/></th>
-                    <th>Customer Status<SortingIcon direction={null}/></th>
-                    <th>Registered On<SortingIcon direction={null}/></th>
-                    <th>Action</th>
-                </tr>
-                </thead>
-                <tbody>
-                {/* row 1 */}
-                {(posts.map(post => (
-                    <tr key={post.id}>
+            <>
+                <table className="table bg-white table-xs">
+                    <thead className="text-base">
+                    <tr>
                         <th></th>
-                        <td>
-                            <div className="flex items-center gap-3">
-                                <div className="avatar">
-                                    <div className="mask mask-squircle w-12 h-12">
-                                        <img
-                                            src={`https://avatar.iran.liara.run/public/boy?username=${post.name}`}
-                                            alt="Avatar Tailwind CSS Component"/>
+                        <th onClick={() => handleSorting("name")}>
+                            Name
+                            <SortingIcon direction={sorting.column === 'name' ? sorting.direction : null}/>
+                        </th>
+                        <th onClick={() => handleSorting("city")}>
+                            City
+                            <SortingIcon direction={sorting.column === 'city' ? sorting.direction : null}/>
+                        </th>
+                        <th>
+                            Contact
+                            <SortingIcon direction="asc"/>
+                        </th>
+                        <th>
+                            Admin User
+                            <SortingIcon direction={null}/>
+                        </th>
+                        <th>Subscription Amount<SortingIcon direction={null}/></th>
+                        <th>Customer Status<SortingIcon direction={null}/></th>
+                        <th>Registered On<SortingIcon direction={null}/></th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {/* row 1 */}
+                    {(posts.map(post => (
+                        <tr key={post.id}>
+                            <th></th>
+                            <td>
+                                <div className="flex items-center gap-3">
+                                    <div className="avatar">
+                                        <div className="mask mask-squircle w-12 h-12">
+                                            <img
+                                                src={`https://avatar.iran.liara.run/public/boy?username=${post.name}`}
+                                                alt="Avatar Tailwind CSS Component"/>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div className="font-bold">{post.name}</div>
+                                        <div className="text-sm opacity-50">{post.color}</div>
                                     </div>
                                 </div>
-                                <div>
-                                    <div className="font-bold">{post.name}</div>
-                                    <div className="text-sm opacity-50">{post.color}</div>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            {post.title}
-                            <br/>
-                            <span className="badge badge-ghost badge-sm">{post.body}</span>
-                        </td>
-                        <td>
-                            <div className="badge badge-success badge-lg">Active</div>
-                        </td>
-                        <td>{formatDate(post.createdAt)}</td>
-                        <td>$1250.96</td>
-                        <td>{formatDate(post.createdAt)}</td>
-                        <td>{formatDate(post.createdAt)}</td>
-                        <th>
-                            <button className="btn btn-square btn-outline btn-sm mr-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none"
-                                     viewBox="0 0 24 24"
-                                     stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                                          d="M1.5 12s4.5-9 10.5-9 10.5 9 10.5 9-4.5 9-10.5 9-10.5-9-10.5-9z"/>
-                                    <circle cx="12" cy="12" r="3"/>
-                                </svg>
+                            </td>
+                            <td>
+                                {post.title}
+                                <br/>
+                                <span className="badge badge-ghost badge-sm">{post.body}</span>
+                            </td>
+                            <td>
+                                <div className="badge badge-success badge-lg">Active</div>
+                            </td>
+                            <td>{formatDate(post.createdAt)}</td>
+                            <td>$1250.96</td>
+                            <td>{formatDate(post.createdAt)}</td>
+                            <td>{formatDate(post.createdAt)}</td>
+                            <th>
+                                <button className="btn btn-square btn-outline btn-sm mr-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none"
+                                         viewBox="0 0 24 24"
+                                         stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                                              d="M1.5 12s4.5-9 10.5-9 10.5 9 10.5 9-4.5 9-10.5 9-10.5-9-10.5-9z"/>
+                                        <circle cx="12" cy="12" r="3"/>
+                                    </svg>
 
 
-                            </button>
-                            <button className="btn btn-square btn-outline btn-sm">
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none"
-                                     viewBox="0 0 24 24"
-                                     stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                                          d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h8l5 5v11a2 2 0 01-2 2z"/>
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                                          d="M17 21V14H7v7"/>
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                                          d="M7 3v5h8"/>
-                                </svg>
+                                </button>
+                                <button className="btn btn-square btn-outline btn-sm">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none"
+                                         viewBox="0 0 24 24"
+                                         stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                                              d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h8l5 5v11a2 2 0 01-2 2z"/>
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                                              d="M17 21V14H7v7"/>
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                                              d="M7 3v5h8"/>
+                                    </svg>
 
-                            </button>
-                        </th>
+                                </button>
+                            </th>
+                        </tr>
+                    )))}
+                    </tbody>
+                    {/* foot */}
+                    <tfoot>
+                    <tr>
+                        <th></th>
+                        <th>Name</th>
+                        <th>City</th>
+                        <th>Contact</th>
+                        <th>Admin User</th>
+                        <th>Subscription Amount</th>
+                        <th>Customer Status</th>
+                        <th>Registered On</th>
+                        <th>Action</th>
                     </tr>
-                )))}
-                </tbody>
-                {/* foot */}
-                <tfoot>
-                <tr>
-                    <th></th>
-                    <th>Name</th>
-                    <th>City</th>
-                    <th>Contact</th>
-                    <th>Admin User</th>
-                    <th>Subscription Amount</th>
-                    <th>Customer Status</th>
-                    <th>Registered On</th>
-                    <th>Action</th>
-                </tr>
-                </tfoot>
-            </table>;
+                    </tfoot>
+                </table>
+                <Pagination/>
+            </>;
     }
 
 
@@ -225,7 +230,7 @@ export default function PostsPage() {
                         <div className="skeleton h-4 w-full"></div>
                         <div className="skeleton h-4 w-full"></div>
                     </div> :
-                    getTable(posts, sorting)
+                    getTable(posts)
             )}
         </div>
     );

@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import React, {useContext} from "react";
-import {ThemeContext} from "../app/context/ThemeContext";
+import {ThemeContext} from "../../app/context/ThemeContext";
 import {redirect} from "next/navigation";
 
 const NavBar = () => {
