@@ -5,6 +5,7 @@ import React, {useRef, useState, useEffect, Suspense} from 'react';
 import SortingIcon from "@/components/Table/TableSortingIcon";
 import Pagination from "@/components/Table/Pagination";
 import {FaRegEye} from "react-icons/fa";
+import {IoDocumentTextOutline} from "react-icons/io5";
 
 
 interface PostsPageProps {
@@ -109,30 +110,10 @@ export default function PostsPage() {
                             <td>{formatDate(post.createdAt)}</td>
                             <td>{formatDate(post.createdAt)}</td>
                             <th>
-                                <button className="btn btn-square btn-outline btn-sm mr-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none"
-                                         viewBox="0 0 24 24"
-                                         stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                                              d="M1.5 12s4.5-9 10.5-9 10.5 9 10.5 9-4.5 9-10.5 9-10.5-9-10.5-9z"/>
-                                        <circle cx="12" cy="12" r="3"/>
-                                    </svg>
-
-
-                                </button>
-                                <button className="btn btn-square btn-outline btn-sm">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none"
-                                         viewBox="0 0 24 24"
-                                         stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                                              d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h8l5 5v11a2 2 0 01-2 2z"/>
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                                              d="M17 21V14H7v7"/>
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                                              d="M7 3v5h8"/>
-                                    </svg>
-
-                                </button>
+                                <div className="flex items-center space-x-2">
+                                    <FaRegEye className="text-base"/>
+                                    <IoDocumentTextOutline className="text-base"/>
+                                </div>
                             </th>
                         </tr>
                     )))}
