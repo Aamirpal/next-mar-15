@@ -136,7 +136,11 @@ export default function PostsPage() {
                     </tr>
                     </tfoot>
                 </table>
-                <Pagination/>
+                <div className="flex justify-between items-center">
+                    <div className="badge badge-ghost">1-15 (Total 500 records)</div>
+                    <Pagination/>
+                </div>
+
             </div>;
     }
 

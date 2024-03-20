@@ -11,13 +11,13 @@ class Drawer extends Component {
                     <div className="flex flex-col justify-between h-full bg-base-200">
                         <ul className="menu p-4 w-80 text-base-content">
                             <div className="flex justify-end">
-                                <button className="btn btn-square">
+                                <label htmlFor="my-drawer-4" className="btn btn-square">
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none"
                                          viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
                                               d="M6 18L18 6M6 6l12 12"/>
                                     </svg>
-                                </button>
+                                </label>
                             </div>
                             {/* Sidebar content here */}
                             <li>
@@ -61,7 +61,7 @@ class Drawer extends Component {
                         </ul>
                         <div className="p-4 w-80 bg-base-200">
                             <button className="btn btn-active btn-primary w-full">Apply</button>
-                            <button className="btn btn-link w-full">Reset</button>
+                            <label htmlFor="my-drawer-4" className="btn btn-link w-full">Reset</label>
                         </div>
                     </div>
                 </div>
