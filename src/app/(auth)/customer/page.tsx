@@ -199,16 +199,22 @@ export default function PostsPage() {
         <div className="col-span-8">
             <Drawer/>
             {/*<input type="text" onChange={handleSearch}/>*/}
-            <div className="m-4 flex justify-end">
-                <label className="input input-bordered flex items-center gap-2" onChange={handleSearch}>
-                    <input ref={searchInputRef} type="text" className="grow " placeholder="Search"/>
-                    <kbd className="kbd kbd-sm">⌘</kbd>
-                    <kbd className="kbd kbd-sm">K</kbd>
-                </label>
-                <div className="drawer-content m-3">
-                    <label htmlFor="my-drawer-4" className="drawer-button text-3xl"><BsFilterCircle/></label>
+            <div className="flex justify-between items-center">
+                <div>
+                    <h1 className="text-3xl m-4 ml-0">Customers</h1>
+                </div>
+                <div className="flex items-center gap-1">
+                    <label className="input input-bordered flex items-center gap-2" onChange={handleSearch}>
+                        <input ref={searchInputRef} type="text" className="grow" placeholder="Search"/>
+                        <kbd className="kbd kbd-sm">⌘</kbd>
+                        <kbd className="kbd kbd-sm">K</kbd>
+                    </label>
+                    <div className="drawer-content m-4">
+                        <label htmlFor="my-drawer-4" className="drawer-button text-3xl"><BsFilterCircle/></label>
+                    </div>
                 </div>
             </div>
+
 
             {(isLoading ?
                     <div className="flex flex-col gap-4 w-full">

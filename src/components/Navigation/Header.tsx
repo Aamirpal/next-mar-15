@@ -22,7 +22,6 @@ const Header: React.FC = () => {
                         <li>Customers</li>
                     </ul>
                 </div>
-                <h1 className="text-3xl font-bold m-4">Customers</h1>
             </div>
             <div>
                 {/*<input*/}
