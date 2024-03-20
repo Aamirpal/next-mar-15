@@ -150,7 +150,7 @@ const Header: React.FC = () => {
                         <a>Settings</a>
                     </li>
                     <li>
-                        <Link href="/">Logout</Link>
+                        <Link href="/public">Logout</Link>
                     </li>
                 </ul>
             </div>
