@@ -6,6 +6,7 @@ import SortingIcon from "@/components/Table/TableSortingIcon";
 import Pagination from "@/components/Table/Pagination";
 import {FaRegEye} from "react-icons/fa";
 import {IoDocumentTextOutline} from "react-icons/io5";
+import Header from "@/components/Navigation/Header";
 
 
 interface PostsPageProps {
@@ -50,8 +51,8 @@ export default function PostsPage() {
                 </div>
             </div>
             :
-            <>
-                <table className="table bg-white table-xs">
+            <div className="overflow-x-auto">
+                <table className="table bg-white table-xs min-w-full">
                     <thead className="text-base">
                     <tr>
                         <th></th>
@@ -134,7 +135,7 @@ export default function PostsPage() {
                     </tfoot>
                 </table>
                 <Pagination/>
-            </>;
+            </div>;
     }
 
 
@@ -194,7 +195,7 @@ export default function PostsPage() {
 
     return (
         <div className="m-8 col-span-8">
-            <h1 className="text-3xl font-bold">Posts</h1>
+            <h1 className="text-3xl font-bold">Customers</h1>
             {/*<input type="text" onChange={handleSearch}/>*/}
             <div className="m-4 flex justify-end">
                 <label className="input input-bordered flex items-center gap-2" onChange={handleSearch}>

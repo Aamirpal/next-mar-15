@@ -7,11 +7,6 @@ export default function Home() {
 
     return (
         <>
-            {/* header */}
-            <Header/>
-            {/* /header */}
-
-
             {/* stats */}
             <section className="stats stats-vertical col-span-12 w-full shadow-sm xl:stats-horizontal">
                 <div className="stat">
