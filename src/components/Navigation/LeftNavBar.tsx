@@ -44,11 +44,11 @@ const LeftNavBar = () => {
                             className="fill-base-100"
                         />
                     </svg>
-                    Daisy Corp
+                    WW-360
                 </div>
                 <ul className="menu">
                     <li>
-                        <Link href='/dashboard' className="active">
+                        <Link href='/dashboard'>
                             <svg
                                 data-src="https://unpkg.com/heroicons/20/solid/home.svg"
                                 className="h-5 w-5"

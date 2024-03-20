@@ -16,7 +16,13 @@ const Header: React.FC = () => {
                 />
             </label>
             <div className="grow">
-                {/*<h1 className="lg:text-2xl lg:font-light">Dashboard</h1>*/}
+                <div className="text-sm breadcrumbs">
+                    <ul>
+                        <li><a>Home</a></li>
+                        <li>Customers</li>
+                    </ul>
+                </div>
+                <h1 className="text-3xl font-bold m-4">Customers</h1>
             </div>
             <div>
                 {/*<input*/}
