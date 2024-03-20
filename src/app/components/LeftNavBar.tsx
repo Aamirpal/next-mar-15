@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const LeftNavBar = () => {
     return (
@@ -47,22 +48,23 @@ const LeftNavBar = () => {
                 </div>
                 <ul className="menu">
                     <li>
-                        <a className="active">
+                        <Link href='/dashboard' className="active">
                             <svg
                                 data-src="https://unpkg.com/heroicons/20/solid/home.svg"
                                 className="h-5 w-5"
                             />
                             Dashboard
-                        </a>
+
+                        </Link>
                     </li>
                     <li>
-                        <a>
+                        <Link href='/customer'>
                             <svg
                                 data-src="https://unpkg.com/heroicons/20/solid/user.svg"
                                 className="h-5 w-5"
                             />
-                            Users
-                        </a>
+                            Customers
+                        </Link>
                     </li>
                     <li>
                         <details>
