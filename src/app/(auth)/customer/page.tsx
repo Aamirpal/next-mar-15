@@ -6,7 +6,6 @@ import SortingIcon from "@/components/Table/TableSortingIcon";
 import Pagination from "@/components/Table/Pagination";
 import {FaRegEye} from "react-icons/fa";
 import {IoDocumentTextOutline} from "react-icons/io5";
-import Header from "@/components/Navigation/Header";
 import Drawer from "@/components/Drawer";
 import {BsFilterCircle} from "react-icons/bs";
 

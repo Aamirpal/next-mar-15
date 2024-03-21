@@ -15,7 +15,7 @@ export default function AuthLayout({children}: AuthLayoutProps) {
                 <input id="my-drawer" type="checkbox" className="drawer-toggle"/>
                 <main className="drawer-content">
                     <Header/>
-                    <div className="grid grid-cols-8 grid-rows-[min-content] gap-y-12 p-4 lg:gap-x-12">
+                    <div className="grid grid-cols-7 grid-rows-[min-content] gap-y-12 p-4 lg:gap-x-12">
                         {children}
                     </div>
                 </main>

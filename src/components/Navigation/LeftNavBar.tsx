@@ -44,7 +44,7 @@ const LeftNavBar = () => {
                             className="fill-base-100"
                         />
                     </svg>
-                    WW-360
+                    Desjardins
                 </div>
                 <ul className="menu">
                     <li>
@@ -212,7 +212,33 @@ const LeftNavBar = () => {
                     </li>
                 </ul>
             </nav>
-            {/* /sidebar menu */}
+
+            <div tabIndex={0}
+                 className="collapse collapse-arrow border border-base-300 bg-white absolute bottom-0">
+
+                <input type="checkbox" className="peer"/>
+                <div className="collapse-title font-medium">
+                    Claim details
+                </div>
+                <div className="collapse-content">
+                    <div className="m-1 text-xs">
+                        <ul>
+                            <li>Claimant: John Doe</li>
+                            <li>Policy no: 123456</li>
+                            <li>Claim type: Medical</li>
+                            <li>Claim date: 12/12/2021</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul className="steps text-xs">
+                            <li className="step step-neutral">Submitted</li>
+                            <li className="step step-neutral">Assigned</li>
+                            <li className="step">Processing</li>
+                            <li className="step">Approved</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </aside>
     );
 };
