@@ -8,6 +8,10 @@ import {FaRegEye} from "react-icons/fa";
 import {IoDocumentTextOutline} from "react-icons/io5";
 import Drawer from "@/components/Drawer";
 import {BsFilterCircle} from "react-icons/bs";
+import {IoMdMore} from "react-icons/io";
+import {TfiDownload} from "react-icons/tfi";
+import {BiColumns} from "react-icons/bi";
+import ColumnsAdjust from "@/components/Modals/ColumnsAdjust";
 
 
 interface PostsPageProps {
@@ -201,6 +205,8 @@ export default function PostsPage() {
     return (
         <div className="col-span-8">
             <Drawer/>
+            <ColumnsAdjust
+                columns={["Name", "City", "Contact", "Admin", "Subscription", "Customer", "Registered", "Action"]}/>
             {/*<input type="text" onChange={handleSearch}/>*/}
             <div className="flex justify-between items-center">
                 <div>
@@ -212,8 +218,18 @@ export default function PostsPage() {
                         <kbd className="kbd kbd-sm">⌘</kbd>
                         <kbd className="kbd kbd-sm">K</kbd>
                     </label>
-                    <div className="drawer-content m-4">
+                    <div className="drawer-content ">
                         <label htmlFor="my-drawer-4" className="drawer-button text-3xl"><BsFilterCircle/></label>
+                    </div>
+                    <div className="dropdown dropdown-bottom dropdown-end">
+                        <div tabIndex={0} role="button" className="btn"><IoMdMore className='text-2xl'/></div>
+                        <ul tabIndex={0}
+                            className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                            <li><a><TfiDownload/>Export to Excel</a></li>
+                            <li><a><TfiDownload/>Export to CSV</a></li>
+                            <li><a onClick={() => document.getElementById('my_modal_3').showModal()}><BiColumns/>Config
+                                columns</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
