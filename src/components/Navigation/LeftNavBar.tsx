@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
+
 const LeftNavBar = () => {
     return (
         <aside className="drawer-side z-10">
@@ -58,7 +59,7 @@ const LeftNavBar = () => {
                         </Link>
                     </li>
                     <li>
-                        <Link href='/customer'>
+                        <Link href='/customer' className="custom-active">
                             <svg
                                 data-src="https://unpkg.com/heroicons/20/solid/user.svg"
                                 className="h-5 w-5"

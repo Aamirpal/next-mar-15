@@ -1,6 +1,15 @@
 import Link from "next/link";
 import React from "react";
 import {IoMdNotificationsOutline} from "react-icons/io";
+import {CgMenuGridR} from "react-icons/cg";
+import {VscOrganization} from "react-icons/vsc";
+import {GrUserSettings} from "react-icons/gr";
+import {IoSettingsSharp} from "react-icons/io5";
+import {PiUsersFourFill} from "react-icons/pi";
+import {GrDocumentConfig} from "react-icons/gr";
+import {MdNotificationImportant} from "react-icons/md";
+import {ImParagraphRight} from "react-icons/im";
+import {FaWpforms} from "react-icons/fa";
 
 
 const Header: React.FC = () => {
@@ -29,6 +38,95 @@ const Header: React.FC = () => {
                 {/*    placeholder="Global Search"*/}
                 {/*    className="input input-sm max-sm:w-24"*/}
                 {/*/>*/}
+            </div>
+
+            <div className="dropdown dropdown-end z-10">
+                <div tabIndex={0} className="btn btn-circle btn-ghost">
+                    <div className="indicator">
+                        <div className="grid w-5 h-5 place-items-center">
+                            <CgMenuGridR className="text-2xl"/>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <ul tabIndex={0}
+                        className="dropdown-content menu p-2 shadow bg-base-100 rounded-box grid grid-cols-2 gap-3"
+                        style={{width: '550px'}}>
+                        {/* Repeat for each <li> */}
+                        <li>
+                            <div className="border-2 flex items-start px-2 menu-div">
+                                <Link href="" className="flex items-center">
+                                    <VscOrganization className="text-2xl mr-2"/>
+                                    <span className="truncate" style={{maxWidth: 'calc(100% - 2rem)'}}>Organization Profile</span> {/* Inline style for max-width */}
+                                </Link>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="border-2 flex items-start px-2 menu-div">
+                                <Link href="" className="flex items-center">
+                                    <GrUserSettings className="text-2xl mr-2"/>
+                                    <span className="truncate"
+                                          style={{maxWidth: 'calc(100% - 2rem)'}}>Roles & Users</span>
+                                </Link>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div className="border-2 flex items-start px-2 menu-div">
+                                <Link href="" className="flex items-center">
+                                    <IoSettingsSharp className="text-2xl mr-2"/>
+                                    <span className="truncate"
+                                          style={{maxWidth: 'calc(100% - 2rem)'}}>Billing Settings</span>
+                                </Link>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="border-2 flex items-start px-2 menu-div">
+                                <Link href="" className="flex items-center">
+                                    <PiUsersFourFill className="text-2xl mr-2"/>
+                                    <span className="truncate"
+                                          style={{maxWidth: 'calc(100% - 2rem)'}}>Manage Clients</span>
+                                </Link>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="border-2 flex items-start px-2 menu-div">
+                                <Link href="" className="flex items-start">
+                                    <GrDocumentConfig className="text-2xl mr-2"/>
+                                    <span className="truncate"
+                                          style={{maxWidth: 'calc(100% - 2rem)'}}>Other Config</span>
+                                </Link>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="border-2 flex items-start px-2 menu-div">
+                                <Link href="" className="flex items-center">
+                                    <MdNotificationImportant className="text-2xl mr-2"/>
+                                    <span className="truncate" style={{maxWidth: 'calc(100% - 2rem)'}}>System notifications</span>
+                                </Link>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="border-2 flex items-start px-2 menu-div">
+                                <Link href="" className="flex items-center">
+                                    <ImParagraphRight className="text-2xl mr-2"/>
+                                    <span className="truncate"
+                                          style={{maxWidth: 'calc(100% - 2rem)'}}>Report Templates</span>
+                                </Link>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="border-2 flex items-start px-2 menu-div">
+                                <Link href="" className="flex items-center">
+                                    <FaWpforms className="text-2xl mr-2"/>
+                                    <span className="truncate"
+                                          style={{maxWidth: 'calc(100% - 2rem)'}}>Form Builder</span>
+                                </Link>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
 
 

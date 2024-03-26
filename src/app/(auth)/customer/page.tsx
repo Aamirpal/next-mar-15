@@ -12,6 +12,7 @@ import {IoMdMore} from "react-icons/io";
 import {TfiDownload} from "react-icons/tfi";
 import {BiColumns} from "react-icons/bi";
 import ColumnsAdjust from "@/components/Modals/ColumnsAdjust";
+import {IoFilter} from "react-icons/io5";
 
 
 interface PostsPageProps {
@@ -58,7 +59,9 @@ export default function PostsPage() {
             :
             <div className="overflow-x-auto">
                 <table className="table bg-white table-xs min-w-full">
-                    <thead className="text-base">
+                    <thead style={{borderTopLeftRadius: '0.5rem', borderTopRightRadius: '0.5rem'}}
+                           className="text-base h-12 bg-primary text-white">
+
                     <tr>
                         <th></th>
                         <th onClick={() => handleSorting("name")}>
@@ -109,7 +112,7 @@ export default function PostsPage() {
                                 <span className="badge badge-ghost badge-sm">{post.body}</span>
                             </td>
                             <td>
-                                <div className="badge badge-success badge-lg">Active</div>
+                                <div className="badge badge-success rounded-sm">Active</div>
                             </td>
                             <td>{formatDate(post.createdAt)}</td>
                             <td>$1250.96</td>
@@ -125,19 +128,19 @@ export default function PostsPage() {
                     )))}
                     </tbody>
                     {/* foot */}
-                    <tfoot>
-                    <tr>
-                        <th></th>
-                        <th>Name</th>
-                        <th>City</th>
-                        <th>Contact</th>
-                        <th>Admin User</th>
-                        <th>Subscription Amount</th>
-                        <th>Customer Status</th>
-                        <th>Registered On</th>
-                        <th>Action</th>
-                    </tr>
-                    </tfoot>
+                    {/*<tfoot>*/}
+                    {/*<tr>*/}
+                    {/*    <th></th>*/}
+                    {/*    <th>Name</th>*/}
+                    {/*    <th>City</th>*/}
+                    {/*    <th>Contact</th>*/}
+                    {/*    <th>Admin User</th>*/}
+                    {/*    <th>Subscription Amount</th>*/}
+                    {/*    <th>Customer Status</th>*/}
+                    {/*    <th>Registered On</th>*/}
+                    {/*    <th>Action</th>*/}
+                    {/*</tr>*/}
+                    {/*</tfoot>*/}
                 </table>
                 <div className="flex justify-between items-center">
                     <div className="badge badge-ghost">1-15 (Total 500 records)</div>
@@ -212,16 +215,21 @@ export default function PostsPage() {
                 <div>
                     <h1 className="text-3xl m-4 ml-0">Customers</h1>
                 </div>
-                <div className="flex items-center gap-1">
-                    <label className="input input-bordered flex items-center gap-2" onChange={handleSearch}>
+                <div className="flex items-center gap-2">
+                    <label className="input input-bordered flex items-center gap-4 "
+                           onChange={handleSearch}>
                         <input ref={searchInputRef} type="text" className="grow" placeholder="Search"/>
                         <kbd className="kbd kbd-sm">⌘</kbd>
                         <kbd className="kbd kbd-sm">K</kbd>
                     </label>
-                    <div className="drawer-content ">
-                        <label htmlFor="my-drawer-4" className="drawer-button text-3xl"><BsFilterCircle/></label>
+                    
+                    <div className="dropdown dropdown-bottom dropdown-end ">
+                        <div tabIndex={0} role="button" className="btn">
+                            <label htmlFor="my-drawer-4" className="drawer-button text-2xl"><IoFilter/></label>
+                        </div>
                     </div>
-                    <div className="dropdown dropdown-bottom dropdown-end">
+
+                    <div className="dropdown dropdown-bottom dropdown-end ">
                         <div tabIndex={0} role="button" className="btn"><IoMdMore className='text-2xl'/></div>
                         <ul tabIndex={0}
                             className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">

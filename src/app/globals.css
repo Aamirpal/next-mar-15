@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --color-primary: #4A00FF; /* Your DaisyUI primary color */
+}
+
+.custom-active {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+.custom-active:hover {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+.menu-div:hover {
+    color: var(--color-primary);
+}
